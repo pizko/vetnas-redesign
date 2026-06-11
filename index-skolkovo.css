@@ -744,6 +744,34 @@ body.vetnas-concept {
   line-height: 1.65;
 }
 
+.concept-breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 18px;
+  color: #626587;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.concept-breadcrumbs a {
+  color: var(--royal);
+  text-decoration: none;
+}
+
+.concept-breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.concept-breadcrumbs__sep {
+  color: #9aa1bb;
+}
+
+.concept-breadcrumbs__current {
+  color: #3f4162;
+  font-weight: 700;
+}
+
 .concept-content-card {
   overflow: hidden;
   border: 1px solid var(--line);
