@@ -330,32 +330,6 @@
         </div>
       </section>
 
-      <section class="concept-section" id="news">
-        <div class="concept-shell">
-          <div class="concept-section-head">
-            <h2>Полезные разделы</h2>
-            <p>Быстрые переходы к основным разделам сайта: новости, услуги и информация о клинике.</p>
-          </div>
-          <div class="concept-news-grid">
-            <a class="concept-news" href="novosti.html">
-              <h3>Новости</h3>
-              <p>Материалы и обновления клиники.</p>
-              <span>Перейти</span>
-            </a>
-            <a class="concept-news" href="uslugi-i-tseny.html">
-              <h3>Услуги и цены</h3>
-              <p>Основные направления ветеринарной помощи.</p>
-              <span>Смотреть</span>
-            </a>
-            <a class="concept-news" href="o-kompanii.html">
-              <h3>О компании</h3>
-              <p>Информация о клинике и подходе к работе.</p>
-              <span>Подробнее</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
       <section class="concept-section concept-section--soft" id="contacts">
         <div class="concept-shell">
           <div class="concept-section-head">
@@ -374,6 +348,31 @@
               <h3>График работы</h3>
               <p>24/7</p>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="concept-section" id="feedback">
+        <div class="concept-shell">
+          <div class="vns-form-card">
+            <div class="concept-section-head">
+              <h2>Оставить заявку</h2>
+              <p>Оставьте контакты — администратор перезвонит и подскажет по приёму.</p>
+            </div>
+            <form class="vns-form" data-feedback-form novalidate>
+              <input type="text" name="website" class="vns-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <div class="vns-form-row">
+                <input type="text" name="name" placeholder="Ваше имя *" required>
+                <input type="tel" name="phone" placeholder="Телефон *" required>
+              </div>
+              <textarea name="message" rows="3" placeholder="Сообщение (необязательно)"></textarea>
+              <label class="vns-consent">
+                <input type="checkbox" name="consent" required>
+                <span>Я ознакомлен с <a href="#" data-consent-open>пользовательским соглашением</a> и даю согласие на обработку персональных данных</span>
+              </label>
+              <button type="submit" class="vns-form-submit">Отправить заявку</button>
+              <div class="vns-form-note" data-form-note role="status"></div>
+            </form>
           </div>
         </div>
       </section>
@@ -405,10 +404,25 @@
       <div class="concept-shell">
         <span>© 2026 Ветеринар на связи</span>
         <a href="index.html">Главная</a>
+        <a href="politika-konfidencialnosti.html">Политика конфиденциальности</a>
       </div>
     </footer>
   </div>
+  <div class="vns-modal" data-consent-modal aria-hidden="true">
+    <div class="vns-modal__box" role="dialog" aria-label="Согласие на обработку персональных данных">
+      <button class="vns-modal__close" data-consent-close aria-label="Закрыть">×</button>
+      <h3>Согласие на обработку персональных данных</h3>
+      <p>Настоящим Я, действуя своей волей и в своем интересе, при размещении (вводе) своих персональных данных на Интернет‑сайте vetnasvyaz.ru ИП Ванюшкина И.С. (ИНН 504021177553, ОГРН 319502700064774, далее — Оператор) подтверждаю свое согласие на обработку указанных мной персональных данных Оператором в целях предложения мне услуг, новых услуг, предлагаемых Оператором, в целях проведения опросов, анкетирования, рекламных и маркетинговых исследований в отношении услуг, предоставляемых Оператором, в том числе путем осуществления прямых контактов со мною посредством средств связи, указанных мной на настоящем сайте. Настоящее право (согласие) предоставляется на осуществление любых действий в отношении моих персональных данных, которые необходимы и желаемы для достижения вышеуказанных целей, включая, без ограничения, сбор, систематизацию, накопление, хранение, уточнение (обновление, изменение), использование, передачу, обезличивание, блокирование и уничтожение персональных данных, под которыми понимаются все данные, указанные мной на настоящем сайте.</p>
+      <p>Настоящим подтверждаю, что уведомлен о том, что обработка персональных данных осуществляется Оператором любым способом, в том числе как с использованием средств автоматизации (включая программное обеспечение), так и без использования средств автоматизации (с использованием различных материальных носителей, включая бумажные носители).</p>
+    </div>
+  </div>
+
+  <div class="vns-lightbox" data-lightbox aria-hidden="true">
+    <button class="vns-lightbox__close" aria-label="Закрыть">×</button>
+    <img src="" alt="">
+  </div>
+
   <script src="concept-menu.js?v=20260430-blue-phone-yellow-icon" defer></script>
-  <script src="home.js?v=20260727" defer></script>
+  <script src="home.js?v=20260728" defer></script>
 </body>
 </html>

@@ -1208,3 +1208,57 @@ body.vetnas-concept {
 .reviews-dot{width:9px;height:9px;padding:0;border:none;border-radius:50%;background:#cdd8e6;cursor:pointer;}
 .reviews-dot.active{background:#2f7fd6;width:22px;border-radius:5px;}
 @media (max-width:600px){.concept-reviews-slider{padding:0 34px;}}
+
+/* ===== Форма обратной связи (жёлтая) ===== */
+.vns-form-card{
+  background:#fff;border:1px solid #e7edf5;border-radius:20px;
+  padding:28px;max-width:720px;margin:0 auto;
+  box-shadow:0 16px 40px rgba(20,40,80,.07);
+}
+.vns-form{display:flex;flex-direction:column;gap:14px;margin-top:6px;}
+.vns-form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.vns-form input[type=text],.vns-form input[type=tel],.vns-form textarea{
+  width:100%;box-sizing:border-box;border:1px solid #cfd8e6;border-radius:12px;
+  padding:13px 15px;font-size:15px;font-family:inherit;outline:none;background:#fbfcfe;
+}
+.vns-form input:focus,.vns-form textarea:focus{border-color:var(--sun);background:#fff;}
+.vns-form textarea{resize:vertical;min-height:70px;}
+.vns-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;}
+.vns-consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#5a687c;line-height:1.5;}
+.vns-consent input{margin-top:3px;width:16px;height:16px;flex:0 0 auto;accent-color:var(--sun);}
+.vns-consent a{color:var(--royal);font-weight:700;text-decoration:underline;}
+.vns-form-submit{
+  align-self:flex-start;border:none;cursor:pointer;
+  min-height:50px;padding:0 34px;border-radius:999px;
+  background:var(--sun);color:var(--royal);
+  font:900 15px/1 Montserrat,"Open Sans",sans-serif;
+  box-shadow:0 14px 34px rgba(255,186,0,.35);
+}
+.vns-form-submit:hover{filter:brightness(1.04);}
+.vns-form-submit:disabled{opacity:.6;cursor:default;}
+.vns-form-note{font-size:14px;min-height:18px;}
+.vns-form-note.is-ok{color:#1f9d55;}
+.vns-form-note.is-err{color:#d33;}
+@media (max-width:560px){.vns-form-row{grid-template-columns:1fr;} .vns-form-card{padding:20px;}}
+
+/* ===== Модалка согласия ===== */
+.vns-modal,.vns-lightbox{
+  position:fixed;inset:0;z-index:10000;display:none;
+  align-items:center;justify-content:center;padding:20px;
+  background:rgba(9,16,30,.6);
+}
+.vns-modal.open,.vns-lightbox.open{display:flex;}
+.vns-modal__box{
+  background:#fff;border-radius:16px;max-width:640px;max-height:84vh;overflow-y:auto;
+  padding:26px 28px;position:relative;
+}
+.vns-modal__box h3{margin:0 0 14px;color:var(--royal);font-size:1.3rem;}
+.vns-modal__box p{font-size:14px;line-height:1.6;color:#3d4a5c;margin:0 0 12px;}
+.vns-modal__close,.vns-lightbox__close{
+  position:absolute;top:12px;right:14px;background:none;border:none;
+  font-size:26px;line-height:1;cursor:pointer;color:#8a97a8;
+}
+.vns-lightbox__close{color:#fff;font-size:40px;top:18px;right:24px;z-index:2;}
+
+/* ===== Лайтбокс галереи ===== */
+.vns-lightbox img{max-width:92vw;max-height:88vh;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.5);}
