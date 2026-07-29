@@ -896,6 +896,202 @@ body.vetnas-concept {
   .concept-footer-grid { grid-template-columns: 1fr; gap: 34px; }
 }
 
+/* Pa'lais-inspired motion and editorial type, built from the site's own
+   licensed font files rather than copying the reference's HWT Artz font. */
+@font-face {
+  font-family: "Vet Editorial";
+  src: url("montserrat-e-b-i.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+}
+
+:root { --editorial-font: "Vet Editorial", "Vet Display", "Roboto Condensed", sans-serif; }
+
+.concept-hero h1,
+.concept-page-hero h1,
+.concept-section-head h2,
+.concept-about h2,
+.concept-final h2 {
+  font-family: var(--editorial-font);
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  text-transform: none;
+}
+
+.concept-page { isolation: isolate; }
+.concept-page::before,
+.concept-page::after {
+  position: absolute;
+  z-index: 0;
+  content: "";
+  pointer-events: none;
+}
+
+/* These are called organic blobs: deliberately oversized, free-form colour
+   shapes that cross several blocks instead of acting as small decorations. */
+.concept-page::before {
+  width: min(58vw, 760px);
+  height: 660px;
+  top: 690px;
+  left: -365px;
+  border-radius: 47% 53% 34% 66% / 49% 38% 62% 51%;
+  background: rgba(162, 211, 166, 0.48);
+  box-shadow: 30px -26px 0 rgba(255, 196, 0, 0.24);
+  transform: rotate(-19deg);
+  animation: vet-blob-drift-a 16s ease-in-out infinite alternate;
+}
+
+.concept-page::after {
+  width: min(64vw, 870px);
+  height: 500px;
+  top: 2430px;
+  right: -455px;
+  border-radius: 62% 38% 59% 41% / 35% 55% 45% 65%;
+  background: rgba(106, 168, 220, 0.31);
+  box-shadow: -42px 28px 0 rgba(237, 115, 40, 0.14);
+  transform: rotate(24deg);
+  animation: vet-blob-drift-b 19s ease-in-out infinite alternate;
+}
+
+.concept-page > * { position: relative; z-index: 1; }
+
+.concept-hero::before,
+.concept-page-hero::before {
+  animation: vet-hero-wobble 14s ease-in-out infinite alternate;
+}
+
+.concept-hero::after,
+.concept-page-hero::after { animation: vet-blob-drift-a 11s ease-in-out infinite alternate; }
+.concept-service::after { animation: vet-blob-drift-b 9s ease-in-out infinite alternate; }
+.concept-hero-badge { animation: vet-badge-float 6s ease-in-out infinite alternate; }
+.concept-gallery figure { transition: transform .55s cubic-bezier(.2,.9,.25,1); }
+.concept-gallery figure:hover { transform: translateY(-12px) rotate(-1deg) !important; }
+
+@keyframes vet-hero-wobble {
+  from { transform: rotate(-13deg) scale(1); }
+  to { transform: rotate(-7deg) scale(1.045) translate(-14px, 10px); }
+}
+@keyframes vet-blob-drift-a {
+  from { transform: rotate(-12deg) translate3d(0, 0, 0); }
+  to { transform: rotate(7deg) translate3d(28px, -22px, 0); }
+}
+@keyframes vet-blob-drift-b {
+  from { transform: rotate(17deg) translate3d(0, 0, 0) scale(1); }
+  to { transform: rotate(28deg) translate3d(-18px, 18px, 0) scale(1.07); }
+}
+@keyframes vet-badge-float {
+  from { transform: rotate(1deg) translateY(0); }
+  to { transform: rotate(-1.5deg) translateY(-10px); }
+}
+
+/* Contacts become a joyful editorial mini-composition, rather than three
+   neutral information cards. */
+.concept-contact-grid {
+  position: relative;
+  isolation: isolate;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.concept-contact-grid::before,
+.concept-contact-grid::after {
+  position: absolute;
+  z-index: 0;
+  content: "";
+  pointer-events: none;
+}
+
+.concept-contact-grid::before {
+  width: 310px;
+  height: 230px;
+  top: -72px;
+  left: 25%;
+  border-radius: 63% 37% 52% 48% / 39% 58% 42% 61%;
+  background: rgba(255, 196, 0, .48);
+  transform: rotate(-15deg);
+}
+
+.concept-contact-grid::after {
+  width: 240px;
+  height: 280px;
+  right: -78px;
+  bottom: -94px;
+  border-radius: 39% 61% 33% 67% / 58% 36% 64% 42%;
+  background: rgba(237, 115, 40, .22);
+  transform: rotate(18deg);
+}
+
+.concept-contact-card {
+  position: relative;
+  z-index: 1;
+  min-height: 255px;
+  padding: 35px 31px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 44px 44px 44px 12px;
+  box-shadow: 13px 14px 0 rgba(35, 67, 134, .16), var(--card-shadow);
+}
+
+.concept-contact-card h3 {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 22px;
+  font-size: clamp(31px, 3vw, 43px);
+  line-height: .9;
+}
+
+.concept-contact-card p {
+  position: relative;
+  z-index: 1;
+  max-width: 260px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.concept-contact-card::after {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  right: -56px;
+  bottom: -57px;
+  content: "";
+  border-radius: 56% 44% 30% 70% / 54% 37% 63% 46%;
+  transform: rotate(-14deg);
+}
+
+.concept-contact-card:nth-child(1) { background: var(--deep-indigo); transform: rotate(-1.4deg); }
+.concept-contact-card:nth-child(1) h3,
+.concept-contact-card:nth-child(1) p { color: var(--pure-white); }
+.concept-contact-card:nth-child(1)::after { background: var(--honey-gold); }
+.concept-contact-card:nth-child(2) { background: var(--honey-gold); transform: translateY(16px) rotate(1.1deg); }
+.concept-contact-card:nth-child(2)::after { background: var(--mint-sage); }
+.concept-contact-card:nth-child(2) p a { color: var(--deep-indigo); font-size: 21px; font-weight: 800; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; }
+.concept-contact-card:nth-child(3) { background: var(--mint-sage); transform: rotate(-.55deg); }
+.concept-contact-card:nth-child(3)::after { background: var(--burnt-orange); }
+
+@media (prefers-reduced-motion: reduce) {
+  .concept-page::before,
+  .concept-page::after,
+  .concept-hero::before,
+  .concept-page-hero::before,
+  .concept-hero::after,
+  .concept-page-hero::after,
+  .concept-service::after,
+  .concept-hero-badge { animation: none; }
+}
+
+@media (max-width: 680px) {
+  .concept-page::before { width: 390px; height: 420px; left: -285px; top: 730px; }
+  .concept-page::after { width: 440px; height: 350px; right: -315px; top: 2300px; }
+  .concept-contact-card,
+  .concept-contact-card:nth-child(1),
+  .concept-contact-card:nth-child(2),
+  .concept-contact-card:nth-child(3) { min-height: 212px; transform: none; }
+}
+
 @media (max-width: 680px) {
   .concept-page {
     background:
