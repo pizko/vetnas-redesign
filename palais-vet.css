@@ -898,7 +898,7 @@ body.vetnas-concept {
 
 /* Pa'lais-inspired motion and editorial type, built from the site's own
    licensed font files rather than copying the reference's HWT Artz font. */
-:root { --editorial-font: "Unbounded", "Vet Display", "Roboto Condensed", sans-serif; }
+:root { --editorial-font: "Vet Display", "Roboto Condensed", Impact, sans-serif; }
 
 .concept-hero h1,
 .concept-page-hero h1,
@@ -907,10 +907,9 @@ body.vetnas-concept {
 .concept-final h2 {
   font-family: var(--editorial-font);
   font-style: normal;
-  font-weight: 800;
-  letter-spacing: -0.065em;
-  text-wrap: balance;
-  text-transform: none;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .concept-page { isolation: isolate; }
