@@ -524,3 +524,149 @@ body.vetnas-concept {
   .concept-content td { min-width: 148px; }
   .concept-phone-float { background: var(--deep-indigo); color: var(--honey-gold); box-shadow: var(--card-shadow); }
 }
+
+/* Second pass: bring the rounded, paper-cut silhouettes from the reference
+   forward.  These rules intentionally only affect presentation. */
+:root {
+  --round-card: 30px;
+  --round-soft: 42px;
+}
+
+.concept-hero,
+.concept-page-hero,
+.concept-section {
+  overflow: hidden;
+}
+
+.concept-section > .concept-shell,
+.concept-hero > .concept-shell,
+.concept-page-hero > .concept-shell {
+  position: relative;
+  z-index: 1;
+}
+
+/* A second, quiet paper-cut layer gives each section depth without placing
+   anything over the existing veterinary content. */
+.concept-section:not(.concept-section--royal)::after {
+  position: absolute;
+  z-index: 0;
+  width: 260px;
+  height: 220px;
+  right: -118px;
+  bottom: -116px;
+  content: "";
+  pointer-events: none;
+  background: rgba(106, 168, 220, 0.20);
+  border-radius: 58% 42% 30% 70% / 42% 54% 46% 58%;
+  transform: rotate(18deg);
+}
+
+.concept-section--soft::before {
+  width: 310px;
+  height: 280px;
+  border-radius: 42% 58% 68% 32% / 46% 35% 65% 54%;
+  transform: translate(-46%, -35%) rotate(-17deg);
+}
+
+.concept-section--soft::after {
+  width: 330px;
+  height: 260px;
+  background: rgba(255, 196, 0, 0.19);
+  border-radius: 31% 69% 47% 53% / 63% 38% 62% 37%;
+  transform: rotate(-22deg);
+}
+
+.concept-hero::before,
+.concept-page-hero::before {
+  width: min(58vw, 790px);
+  height: 690px;
+  right: -270px;
+  top: -135px;
+  border-radius: 47% 53% 61% 39% / 39% 48% 52% 61%;
+  box-shadow: inset 24px -24px 0 rgba(237, 115, 40, 0.10);
+}
+
+.concept-hero::after,
+.concept-page-hero::after {
+  width: min(43vw, 590px);
+  height: 510px;
+  right: -155px;
+  bottom: -255px;
+  border-radius: 63% 37% 48% 52% / 39% 62% 38% 61%;
+  box-shadow: inset -18px 18px 0 rgba(255, 255, 255, 0.28);
+}
+
+.concept-hero-photo {
+  inset: 20px 0 56px 10px;
+  overflow: hidden;
+  border-radius: 43% 57% 42% 58% / 35% 42% 58% 65%;
+  box-shadow: 18px 20px 0 rgba(106, 168, 220, 0.24), var(--card-shadow);
+}
+
+.concept-hero-badge {
+  border-radius: 29px 29px 29px 8px;
+  box-shadow: 12px 12px 0 rgba(255, 196, 0, 0.42), var(--card-shadow);
+}
+
+.concept-about-photo {
+  overflow: hidden;
+  border-radius: 58% 42% 37% 63% / 42% 52% 48% 58%;
+  box-shadow: -16px 18px 0 rgba(162, 211, 166, 0.46), var(--card-shadow);
+}
+
+.concept-stat,
+.concept-review,
+.concept-news,
+.concept-contact-card,
+.concept-content-card,
+.concept-service-card,
+.dir-card,
+.vns-form-card,
+.concept-map-card,
+.concept-side-menu__panel {
+  border-radius: var(--round-card);
+}
+
+.concept-service {
+  overflow: hidden;
+  border-radius: 32px 32px 32px 12px;
+  box-shadow: 10px 12px 0 rgba(162, 211, 166, 0.24), var(--card-shadow);
+}
+
+.concept-service:nth-child(3n + 2) { box-shadow: 10px 12px 0 rgba(255, 196, 0, 0.24), var(--card-shadow); }
+.concept-service:nth-child(3n) { box-shadow: 10px 12px 0 rgba(237, 115, 40, 0.16), var(--card-shadow); }
+.concept-service::after { width: 190px; height: 170px; right: -74px; bottom: -76px; }
+
+.concept-gallery figure {
+  overflow: hidden;
+  border-radius: 36px 36px 36px 12px;
+}
+
+.concept-gallery figure:nth-child(even) { border-radius: 54% 46% 24px 24px / 18% 28% 24px 24px; }
+
+.concept-content img { border-radius: var(--round-card); }
+.concept-content table { border-radius: 22px; overflow: hidden; }
+.concept-content .vetnas-landing-card,
+.concept-content .vetnas-landing-block,
+.concept-content .vetnas-landing-cta,
+.concept-content .g-article { border-radius: var(--round-card); }
+
+.concept-service-card { border-radius: 34px 34px 34px 12px; }
+.concept-map-card { overflow: hidden; border-radius: 44px 44px 44px 14px; }
+.vns-form-card { border-radius: 38px 38px 38px 14px; }
+
+@media (max-width: 680px) {
+  .concept-hero-photo {
+    inset: 14px 0 42px 0;
+    border-radius: 38% 62% 40% 60% / 34% 43% 57% 66%;
+  }
+
+  .concept-section:not(.concept-section--royal)::after {
+    width: 190px;
+    height: 165px;
+    right: -90px;
+    bottom: -82px;
+  }
+
+  .concept-section--soft::before { width: 220px; height: 190px; }
+}
