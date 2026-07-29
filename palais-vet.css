@@ -670,3 +670,103 @@ body.vetnas-concept {
 
   .concept-section--soft::before { width: 220px; height: 190px; }
 }
+
+/* Let the colour shapes travel through the whole composition instead of
+   stopping at the bottom edge of a section. */
+.concept-page {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse 310px 460px at 6% 23%, rgba(162, 211, 166, 0.34) 0 56%, transparent 57%),
+    radial-gradient(ellipse 410px 285px at 94% 38%, rgba(255, 196, 0, 0.23) 0 54%, transparent 55%),
+    radial-gradient(ellipse 285px 470px at 4% 69%, rgba(106, 168, 220, 0.20) 0 53%, transparent 54%),
+    radial-gradient(ellipse 450px 310px at 96% 82%, rgba(237, 115, 40, 0.13) 0 50%, transparent 51%);
+}
+
+.concept-section {
+  overflow: visible;
+  background: transparent;
+}
+
+.concept-section--soft {
+  background: rgba(255, 255, 255, 0.64);
+  backdrop-filter: blur(2px);
+}
+
+.concept-section:not(.concept-section--royal)::after {
+  z-index: 0;
+  bottom: -150px;
+  opacity: 0.88;
+}
+
+.concept-section--royal { overflow: hidden; }
+
+/* Small, intentionally uneven print-like details: a hint of neo-brutalism,
+   kept warm and friendly rather than heavy or aggressive. */
+.concept-kicker::after,
+.concept-eyebrow::after {
+  display: inline-block;
+  width: 29px;
+  height: 8px;
+  margin-left: 12px;
+  content: "";
+  vertical-align: middle;
+  background: var(--burnt-orange);
+  border-radius: 999px 3px 999px 3px;
+  transform: rotate(-8deg);
+}
+
+.concept-stat:nth-child(odd),
+.concept-review:nth-child(odd),
+.dir-card:nth-child(odd) {
+  transform: rotate(-0.65deg);
+}
+
+.concept-stat:nth-child(even),
+.concept-review:nth-child(even),
+.dir-card:nth-child(even) {
+  transform: rotate(0.65deg);
+}
+
+.concept-service:nth-child(3n + 1) { transform: translateY(6px) rotate(-0.45deg); }
+.concept-service:nth-child(3n + 2) { transform: translateY(-5px) rotate(0.42deg); }
+.concept-service:nth-child(3n) { transform: translateY(2px) rotate(-0.2deg); }
+.concept-service:hover { transform: translateY(-6px) rotate(0deg); }
+
+.concept-stat,
+.concept-review,
+.dir-card {
+  border: 2px solid rgba(35, 67, 134, 0.16);
+  box-shadow: 7px 8px 0 rgba(35, 67, 134, 0.10), var(--card-shadow);
+}
+
+.concept-service h3::after,
+.dir-card h3::after {
+  display: block;
+  width: 36px;
+  height: 5px;
+  margin-top: 13px;
+  content: "";
+  background: var(--honey-gold);
+  border-radius: 2px 99px 99px 2px;
+  transform: rotate(-3deg);
+}
+
+.concept-gallery figure:nth-child(3n + 1) { transform: rotate(-1.25deg); }
+.concept-gallery figure:nth-child(3n + 2) { transform: translateY(12px) rotate(1deg); }
+.concept-gallery figure:nth-child(3n) { transform: rotate(-0.4deg); }
+
+@media (max-width: 680px) {
+  .concept-page {
+    background:
+      radial-gradient(ellipse 190px 300px at 0 24%, rgba(162, 211, 166, 0.32) 0 55%, transparent 56%),
+      radial-gradient(ellipse 230px 190px at 100% 47%, rgba(255, 196, 0, 0.20) 0 53%, transparent 54%),
+      radial-gradient(ellipse 180px 280px at 0 74%, rgba(106, 168, 220, 0.17) 0 54%, transparent 55%);
+  }
+
+  .concept-service,
+  .concept-gallery figure,
+  .concept-stat,
+  .concept-review,
+  .dir-card { transform: none !important; }
+}
