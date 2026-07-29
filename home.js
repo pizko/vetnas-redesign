@@ -92,39 +92,52 @@
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hide(); });
 })();
 
-/* Feedback form -> Strapi booking. */
+/* Feedback forms -> Strapi booking (works for every [data-feedback-form]). */
 (function () {
   'use strict';
   var API = 'https://deltamoscow.ru/cms/api/bookings';
   var SITE = 'vetnas';
-  var form = document.querySelector('[data-feedback-form]');
-  if (!form) return;
-  var note = form.querySelector('[data-form-note]');
-  function say(msg, ok) { if (note) { note.textContent = msg; note.className = 'vns-form-note' + (ok ? ' is-ok' : ' is-err'); } }
 
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
-    if (form.website.value) return; // honeypot
-    var name = form.name.value.trim();
-    var phone = form.phone.value.trim();
-    var message = form.message.value.trim();
-    if (!name || !phone) { say('Укажите имя и телефон.', false); return; }
-    if (!form.consent.checked) { say('Подтвердите согласие на обработку данных.', false); return; }
-    var btn = form.querySelector('.vns-form-submit');
-    btn.disabled = true; btn.textContent = 'Отправляем…';
-    try {
-      var res = await fetch(API, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ data: { site: SITE, name: name, phone: phone, comment: message, consent: true, source: 'site-form', status: 'new' } })
-      });
-      if (!res.ok) throw new Error('bad status');
-      form.reset();
-      say('Спасибо! Заявка отправлена — мы перезвоним.', true);
-    } catch (err) {
-      say('Не удалось отправить. Позвоните нам: +7 (495) 144-48-03', false);
-    } finally {
-      btn.disabled = false; btn.textContent = 'Отправить заявку';
-    }
-  });
+  function bind(form) {
+    var note = form.querySelector('[data-form-note]');
+    function say(msg, ok) { if (note) { note.textContent = msg; note.className = 'vns-form-note' + (ok ? ' is-ok' : ' is-err'); } }
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      if (form.website.value) return; // honeypot
+      var name = form.name.value.trim();
+      var phone = form.phone.value.trim();
+      var message = form.message.value.trim();
+      if (!name || !phone) { say('Укажите имя и телефон.', false); return; }
+      if (!form.consent.checked) { say('Подтвердите согласие на обработку данных.', false); return; }
+      var btn = form.querySelector('.vns-form-submit');
+      btn.disabled = true; btn.textContent = 'Отправляем…';
+      try {
+        var res = await fetch(API, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ data: { site: SITE, name: name, phone: phone, comment: message, consent: true, source: 'site-form', status: 'new' } })
+        });
+        if (!res.ok) throw new Error('bad status');
+        form.reset();
+        say('Спасибо! Заявка отправлена — мы перезвоним.', true);
+      } catch (err) {
+        say('Не удалось отправить. Позвоните нам: +7 (495) 144-48-03', false);
+      } finally {
+        btn.disabled = false; btn.textContent = 'Отправить заявку';
+      }
+    });
+  }
+  document.querySelectorAll('[data-feedback-form]').forEach(bind);
+
+  // Feedback modal (opened from the hero "Оставить заявку" button)
+  var modal = document.querySelector('[data-feedback-modal]');
+  if (modal) {
+    function open(e) { if (e) e.preventDefault(); modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false'); }
+    function hide() { modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true'); }
+    document.querySelectorAll('[data-feedback-open]').forEach(function (b) { b.addEventListener('click', open); });
+    var close = modal.querySelector('[data-feedback-close]');
+    if (close) close.addEventListener('click', hide);
+    modal.addEventListener('click', function (e) { if (e.target === modal) hide(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hide(); });
+  }
 })();

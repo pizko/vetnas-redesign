@@ -11,7 +11,7 @@
   <link rel="preload" href="montserrat-b.woff2" as="font" crossorigin>
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="stylesheet" href="design-in3p88t1t-1600832236_styles.css">
-  <link rel="stylesheet" href="index-skolkovo.css?v=20260430-blue-phone-yellow-icon">
+  <link rel="stylesheet" href="index-skolkovo.css?v=20260728b">
 
   <!-- SEO META START -->
   <link rel="canonical" href="https://vetnasvyaz.ru">
@@ -175,7 +175,7 @@
             <p class="concept-lead">Ветеринарная помощь в городе Раменское: прием, диагностика, вакцинация, хирургия, стоматология и восстановление животных в клинике рядом с домом.</p>
             <div class="concept-actions">
               <a class="concept-button concept-button--primary" href="tel:+74951444803">Позвонить в клинику</a>
-              <a class="concept-button concept-button--secondary" href="uslugi-i-tseny.html">Посмотреть услуги и цены</a>
+              <button type="button" class="concept-button concept-button--sun" data-feedback-open>Оставить заявку</button>
             </div>
           </div>
           <div class="concept-hero-card" aria-label="Фото клиники">
@@ -352,39 +352,30 @@
         </div>
       </section>
 
-      <section class="concept-section" id="feedback">
-        <div class="concept-shell">
-          <div class="vns-form-card">
-            <div class="concept-section-head">
-              <h2>Оставить заявку</h2>
-              <p>Оставьте контакты — администратор перезвонит и подскажет по приёму.</p>
-            </div>
-            <form class="vns-form" data-feedback-form novalidate>
-              <input type="text" name="website" class="vns-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-              <div class="vns-form-row">
-                <input type="text" name="name" placeholder="Ваше имя *" required>
-                <input type="tel" name="phone" placeholder="Телефон *" required>
-              </div>
-              <textarea name="message" rows="3" placeholder="Сообщение (необязательно)"></textarea>
-              <label class="vns-consent">
-                <input type="checkbox" name="consent" required>
-                <span>Я ознакомлен с <a href="#" data-consent-open>пользовательским соглашением</a> и даю согласие на обработку персональных данных</span>
-              </label>
-              <button type="submit" class="vns-form-submit">Отправить заявку</button>
-              <div class="vns-form-note" data-form-note role="status"></div>
-            </form>
-          </div>
-        </div>
-      </section>
-
-      <section class="concept-section concept-map-section" aria-label="Карта проезда">
+      <section class="concept-section concept-map-section" id="feedback" aria-label="Запись и карта">
         <div class="concept-shell">
           <div class="concept-section-head">
-            <h2>Как нас найти</h2>
-            <p>г. Раменское, ул. Красноармейская, д. 13Б</p>
+            <h2>Запишитесь на приём</h2>
+            <p>Оставьте контакты — администратор перезвонит и подскажет. Мы находимся: г. Раменское, ул. Красноармейская, д. 13Б.</p>
           </div>
-          <div class="concept-map-card">
-            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A12c6f83f62633c0e3e8d6a48d06744f5b1911b877c4178e68e373911f8e94fb7&source=constructor" title="Ветеринар на связи на карте" loading="lazy"></iframe>
+          <div class="concept-map-layout">
+            <div class="vns-form-card vns-form-card--map">
+              <form class="vns-form" data-feedback-form novalidate>
+                <input type="text" name="website" class="vns-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <input type="text" name="name" placeholder="Ваше имя *" required>
+                <input type="tel" name="phone" placeholder="Телефон *" required>
+                <textarea name="message" rows="3" placeholder="Сообщение (необязательно)"></textarea>
+                <label class="vns-consent">
+                  <input type="checkbox" name="consent" required>
+                  <span>Я ознакомлен с <a href="#" data-consent-open>пользовательским соглашением</a> и даю согласие на обработку персональных данных</span>
+                </label>
+                <button type="submit" class="vns-form-submit">Отправить заявку</button>
+                <div class="vns-form-note" data-form-note role="status"></div>
+              </form>
+            </div>
+            <div class="concept-map-card">
+              <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A12c6f83f62633c0e3e8d6a48d06744f5b1911b877c4178e68e373911f8e94fb7&source=constructor" title="Ветеринар на связи на карте" loading="lazy"></iframe>
+            </div>
           </div>
         </div>
       </section>
@@ -417,12 +408,32 @@
     </div>
   </div>
 
+  <div class="vns-modal" data-feedback-modal aria-hidden="true">
+    <div class="vns-modal__box" role="dialog" aria-label="Оставить заявку">
+      <button class="vns-modal__close" data-feedback-close aria-label="Закрыть">×</button>
+      <h3>Оставить заявку</h3>
+      <p class="vns-modal__lead">Оставьте контакты — администратор перезвонит и подскажет по приёму.</p>
+      <form class="vns-form" data-feedback-form novalidate>
+        <input type="text" name="website" class="vns-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="text" name="name" placeholder="Ваше имя *" required>
+        <input type="tel" name="phone" placeholder="Телефон *" required>
+        <textarea name="message" rows="3" placeholder="Сообщение (необязательно)"></textarea>
+        <label class="vns-consent">
+          <input type="checkbox" name="consent" required>
+          <span>Я ознакомлен с <a href="#" data-consent-open>пользовательским соглашением</a> и даю согласие на обработку персональных данных</span>
+        </label>
+        <button type="submit" class="vns-form-submit">Отправить заявку</button>
+        <div class="vns-form-note" data-form-note role="status"></div>
+      </form>
+    </div>
+  </div>
+
   <div class="vns-lightbox" data-lightbox aria-hidden="true">
     <button class="vns-lightbox__close" aria-label="Закрыть">×</button>
     <img src="" alt="">
   </div>
 
   <script src="concept-menu.js?v=20260430-blue-phone-yellow-icon" defer></script>
-  <script src="home.js?v=20260728" defer></script>
+  <script src="home.js?v=20260728b" defer></script>
 </body>
 </html>
