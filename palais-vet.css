@@ -604,8 +604,6 @@ body.vetnas-concept {
 }
 
 .concept-hero-badge {
-  width: min(390px, 88%);
-  padding: 26px 26px 22px;
   border-radius: 29px 29px 29px 8px;
   box-shadow: 12px 12px 0 rgba(255, 196, 0, 0.42), var(--card-shadow);
 }
