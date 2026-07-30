@@ -1127,3 +1127,17 @@ body.vetnas-concept {
   .concept-review,
   .dir-card { transform: none !important; }
 }
+
+/* One continuous paper field: the organic colour shapes belong to the page,
+   not to a single block. Transparent section backgrounds let them cross the
+   hero/content boundary instead of ending in a hard horizontal line. */
+.concept-hero,
+.concept-page-hero {
+  overflow: visible;
+  background: transparent;
+}
+
+.concept-page {
+  min-height: 100vh;
+  background-color: var(--cream-paper);
+}
