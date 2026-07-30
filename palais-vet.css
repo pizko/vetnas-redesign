@@ -1208,16 +1208,40 @@ body.vetnas-concept {
 
 .concept-page > header,
 .concept-page > main,
-.concept-page > footer,
-.concept-page > .concept-side-menu,
-.concept-page > .concept-phone-float {
+.concept-page > footer {
   position: relative;
   z-index: 2;
 }
 
 .concept-page > header { z-index: 3; }
-.concept-page > .concept-side-menu,
-.concept-page > .concept-phone-float { z-index: 4; }
+
+/* The menu is an independent overlay: it stays at the left edge of the
+   viewport and its expanded panel never takes space from the page layout. */
+.concept-page > .concept-side-menu {
+  position: fixed;
+  z-index: 70;
+  top: 104px;
+  left: 20px;
+}
+
+.concept-side-menu__panel {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  margin-top: 0;
+}
+
+.concept-page > .concept-phone-float {
+  position: fixed;
+  z-index: 60;
+}
+
+@media (max-width: 680px) {
+  .concept-page > .concept-side-menu {
+    top: 12px;
+    left: 12px;
+  }
+}
 
 .concept-topbar,
 .concept-phone,

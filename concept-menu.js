@@ -1,8 +1,8 @@
 (function () {
   var paletteStylesheet = document.querySelector('link[href*="palais-vet.css"]');
 
-  if (paletteStylesheet && !paletteStylesheet.href.includes('v=20260730-blob-layer')) {
-    paletteStylesheet.href += (paletteStylesheet.href.includes('?') ? '&' : '?') + 'v=20260730-blob-layer';
+  if (paletteStylesheet && !paletteStylesheet.href.includes('v=20260730-menu-overlay')) {
+    paletteStylesheet.href += (paletteStylesheet.href.includes('?') ? '&' : '?') + 'v=20260730-menu-overlay';
   }
 
   document.addEventListener("click", function (event) {
