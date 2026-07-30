@@ -1131,13 +1131,65 @@ body.vetnas-concept {
 /* One continuous paper field: the organic colour shapes belong to the page,
    not to a single block. Transparent section backgrounds let them cross the
    hero/content boundary instead of ending in a hard horizontal line. */
+.concept-page {
+  --blob-yellow: rgba(255, 196, 0, 0.48);
+  --blob-mint: rgba(162, 211, 166, 0.42);
+  --blob-blue: rgba(106, 168, 220, 0.30);
+  --blob-orange: rgba(237, 115, 40, 0.14);
+  min-height: 100vh;
+  isolation: isolate;
+  background-color: var(--cream-paper);
+  background-image:
+    radial-gradient(ellipse 420px 380px at 102% 7%, var(--blob-yellow) 0 52%, transparent 53%),
+    radial-gradient(ellipse 310px 460px at 6% 23%, var(--blob-mint) 0 56%, transparent 57%),
+    radial-gradient(ellipse 410px 285px at 94% 38%, var(--blob-yellow) 0 54%, transparent 55%),
+    radial-gradient(ellipse 285px 470px at 4% 69%, var(--blob-blue) 0 53%, transparent 54%),
+    radial-gradient(ellipse 450px 310px at 96% 82%, var(--blob-orange) 0 50%, transparent 51%);
+}
+
 .concept-hero,
 .concept-page-hero {
   overflow: visible;
   background: transparent;
 }
 
-.concept-page {
-  min-height: 100vh;
-  background-color: var(--cream-paper);
+/* Blobs must have exactly one owner: .concept-page. Section-level shapes
+   would sit over the common layer and visually change its colour at joins. */
+.concept-hero::before,
+.concept-hero::after,
+.concept-page-hero::before,
+.concept-page-hero::after,
+.concept-section:not(.concept-section--royal)::before,
+.concept-section:not(.concept-section--royal)::after {
+  display: none;
+}
+
+.concept-section,
+.concept-section--soft,
+.concept-map-section {
+  background: transparent;
+  backdrop-filter: none;
+}
+
+/* The page background is layer 1, blobs are layer 2, and all real UI is
+   layer 3. Therefore a blob can never cover a navigation control or phone. */
+.concept-page::before,
+.concept-page::after {
+  z-index: 0;
+}
+
+.concept-page > header,
+.concept-page > main,
+.concept-page > footer,
+.concept-page > .concept-side-menu,
+.concept-page > .concept-phone-float {
+  position: relative;
+  z-index: 2;
+}
+
+.concept-topbar,
+.concept-phone,
+.concept-phone-float {
+  position: relative;
+  z-index: 3;
 }
