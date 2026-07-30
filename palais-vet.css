@@ -1214,34 +1214,3 @@ body.vetnas-concept {
   position: relative;
   z-index: 3;
 }
-
-/* Sparse medical marks belong to the background layer, never to content. */
-.concept-medical-icons {
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.concept-medical-icons span {
-  position: absolute;
-  color: rgba(35, 67, 134, 0.18);
-  font-family: "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
-  font-size: clamp(28px, 3vw, 48px);
-  line-height: 1;
-  opacity: 0.34;
-  transform: rotate(var(--icon-rotation));
-}
-
-.concept-medical-icons span:nth-child(1) { top: 16%; left: 7%; --icon-rotation: -18deg; }
-.concept-medical-icons span:nth-child(2) { top: 31%; right: 11%; --icon-rotation: 15deg; }
-.concept-medical-icons span:nth-child(3) { top: 47%; left: 14%; --icon-rotation: 12deg; }
-.concept-medical-icons span:nth-child(4) { top: 62%; right: 8%; --icon-rotation: -14deg; }
-.concept-medical-icons span:nth-child(5) { top: 76%; left: 9%; --icon-rotation: 16deg; }
-.concept-medical-icons span:nth-child(6) { top: 88%; right: 17%; --icon-rotation: -10deg; }
-
-@media (max-width: 680px) {
-  .concept-medical-icons span { font-size: 28px; opacity: 0.25; }
-  .concept-medical-icons span:nth-child(n + 5) { display: none; }
-}
