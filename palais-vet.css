@@ -644,6 +644,13 @@ body.vetnas-concept {
 
 .concept-gallery figure:nth-child(even) { border-radius: 54% 46% 24px 24px / 18% 28% 24px 24px; }
 
+/* The middle gallery column is deliberately rectangular, like the right one. */
+.concept-gallery figure:nth-child(2),
+.concept-gallery figure:nth-child(4) {
+  border-radius: 36px 36px 36px 12px;
+  transform: none;
+}
+
 .concept-content img { border-radius: var(--round-card); }
 .concept-content table { border-radius: 22px; overflow: hidden; }
 .concept-content .vetnas-landing-card,
@@ -755,6 +762,10 @@ body.vetnas-concept {
 .concept-gallery figure:nth-child(3n + 1) { transform: rotate(-1.25deg); }
 .concept-gallery figure:nth-child(3n + 2) { transform: translateY(12px) rotate(1deg); }
 .concept-gallery figure:nth-child(3n) { transform: rotate(-0.4deg); }
+
+/* Keep the two images in the middle column as clean rectangular cards. */
+.concept-gallery figure:nth-child(2),
+.concept-gallery figure:nth-child(4) { transform: none; }
 
 /* The final call-to-action becomes a distinct, high-contrast paper-cut panel.
    It keeps the white copy readable while borrowing Pa'lais' lively, broken-up
