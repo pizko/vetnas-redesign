@@ -614,6 +614,10 @@ body.vetnas-concept {
   box-shadow: -16px 18px 0 rgba(162, 211, 166, 0.46), var(--card-shadow);
 }
 
+/* Images are inline by default and leave a tiny baseline gap. In this
+   framed photo that exposed the blue card background underneath the image. */
+.concept-about-photo img { display: block; }
+
 .concept-stat,
 .concept-review,
 .concept-news,
