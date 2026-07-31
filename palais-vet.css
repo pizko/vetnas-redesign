@@ -1280,3 +1280,14 @@ body.vetnas-concept {
   position: relative;
   z-index: 3;
 }
+
+/* Give review slides the same solid card treatment as the service cards. */
+.concept-reviews-slider .concept-review {
+  overflow: hidden;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 32px 32px 32px 12px;
+  background: var(--pure-white);
+  box-shadow: 10px 12px 0 rgba(162, 211, 166, 0.24), var(--card-shadow);
+  transform: none !important;
+}
