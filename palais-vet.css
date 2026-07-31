@@ -619,6 +619,10 @@ body.vetnas-concept {
 /* Reserve space for the rotated review card's lower edge and shadow. */
 .reviews-viewport { padding-bottom: 22px; }
 
+/* Reviews use the page's common background rather than their own colour layer. */
+#reviews::before,
+#reviews::after { display: none; }
+
 .concept-about-photo {
   overflow: hidden;
   border-radius: 58% 42% 37% 63% / 42% 52% 48% 58%;
