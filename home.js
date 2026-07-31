@@ -1,4 +1,4 @@
-/* Homepage reviews slider — shows 1 (mobile) or 2 (desktop) reviews, auto-rotates. */
+/* Homepage reviews slider — shows one review and auto-rotates every 5 seconds. */
 (function () {
   'use strict';
   function init(root) {
@@ -12,7 +12,7 @@
     var index = 0;
     var timer = null;
 
-    function perView() { return window.matchMedia('(min-width: 768px)').matches ? 2 : 1; }
+    function perView() { return 1; }
     function pages() { return Math.max(1, Math.ceil(slides.length / perView())); }
 
     function buildDots() {

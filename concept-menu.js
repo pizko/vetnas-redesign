@@ -22,4 +22,21 @@
       menu.removeAttribute("open");
     });
   });
+
+  /* The exported news pagination writes the selected page as plain text.
+     Turn it into a real, styled current-page control on every news page. */
+  document.querySelectorAll(".g-pagination").forEach(function (pagination) {
+    Array.prototype.slice.call(pagination.childNodes).forEach(function (node) {
+      if (node.nodeType !== 3) return;
+
+      var pageNumber = node.textContent.trim();
+      if (!/^\d+$/.test(pageNumber)) return;
+
+      var current = document.createElement("span");
+      current.className = "g-pagination__item g-pagination__item--active";
+      current.setAttribute("aria-current", "page");
+      current.textContent = pageNumber;
+      pagination.replaceChild(current, node);
+    });
+  });
 })();
