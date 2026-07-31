@@ -616,8 +616,12 @@ body.vetnas-concept {
   border: 0;
 }
 
-/* Reserve space for the rotated review card's lower edge and shadow. */
-.reviews-viewport { padding-bottom: 22px; }
+/* Keep the slider clipped horizontally, while leaving room for the review
+   frame and shadow above and below without adding a visible padding strip. */
+.reviews-viewport {
+  overflow: visible;
+  clip-path: inset(-18px 0 -22px 0);
+}
 
 /* Reviews use the page's common background rather than their own colour layer. */
 #reviews::before,
