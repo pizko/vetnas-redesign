@@ -623,7 +623,11 @@ body.vetnas-concept {
   clip-path: inset(-18px 0 -22px 0);
 }
 
-.reviews-dots { margin-top: 0; }
+.reviews-dots {
+  margin-top: 0;
+  padding-top: 16px;
+  background: #fbf9f6;
+}
 
 /* Reviews use the page's common background rather than their own colour layer. */
 #reviews::before,
