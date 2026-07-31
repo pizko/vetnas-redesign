@@ -629,6 +629,8 @@ body.vetnas-concept {
   background: transparent;
 }
 
+.concept-reviews-slider .concept-review { box-shadow: none; }
+
 /* Reviews use the page's common background rather than their own colour layer. */
 #reviews::before,
 #reviews::after { display: none; }
