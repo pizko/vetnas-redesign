@@ -624,9 +624,9 @@ body.vetnas-concept {
 }
 
 .reviews-dots {
-  margin-top: 0;
-  padding-top: 16px;
-  background: #fbf9f6;
+  margin-top: 8px;
+  padding-top: 0;
+  background: transparent;
 }
 
 /* Reviews use the page's common background rather than their own colour layer. */
