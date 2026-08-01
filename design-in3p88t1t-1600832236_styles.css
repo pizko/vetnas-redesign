@@ -26,24 +26,24 @@
 @font-face { font-family: "Montserrat"; font-weight: 800; font-style: italic; font-display: swap; src: url("g/fonts/montserrat/montserrat-e-b-i.woff2") format("woff2"), url("g/fonts/montserrat/montserrat-e-b-i.woff") format("woff");}
 @font-face { font-family: "Montserrat"; font-weight: 900; font-style: normal; font-display: swap; src: url("g/fonts/montserrat/montserrat-bl.woff2") format("woff2"), url("g/fonts/montserrat/montserrat-bl.woff") format("woff");}
 @font-face { font-family: "Montserrat"; font-weight: 900; font-style: italic; font-display: swap; src: url("g/fonts/montserrat/montserrat-bl-i.woff2") format("woff2"), url("g/fonts/montserrat/montserrat-bl-i.woff") format("woff");}
-@font-face { font-family: "Roboto"; font-weight: 100; font-style: normal; font-display: swap; src: url("g/fonts/roboto/roboto-t.woff2") format("woff2"), url("g/fonts/roboto/roboto-t.woff") format("woff");}
-@font-face { font-family: "Roboto"; font-weight: 100; font-style: italic; font-display: swap; src: url("g/fonts/roboto/roboto-t-i.woff2") format("woff2"), url("g/fonts/roboto/roboto-t-i.woff") format("woff");}
-@font-face { font-family: "Roboto"; font-weight: 300; font-style: normal; font-display: swap; src: url("g/fonts/roboto/roboto-l.woff2") format("woff2"), url("g/fonts/roboto/roboto-l.woff") format("woff");}
-@font-face { font-family: "Roboto"; font-weight: 300; font-style: italic; font-display: swap; src: url("g/fonts/roboto/roboto-l-i.woff2") format("woff2"), url("g/fonts/roboto/roboto-l-i.woff") format("woff");}
-@font-face { font-family: "Roboto"; font-weight: 400; font-style: normal; font-display: swap; src: url("g/fonts/roboto/roboto-r.woff2") format("woff2"), url("g/fonts/roboto/roboto-r.woff") format("woff");}
-@font-face { font-family: "Roboto"; font-weight: 400; font-style: italic; font-display: swap; src: url("g/fonts/roboto/roboto-r-i.woff2") format("woff2"), url("g/fonts/roboto/roboto-r-i.woff") format("woff");}
-@font-face { font-family: "Roboto"; font-weight: 500; font-style: normal; font-display: swap; src: url("g/fonts/roboto/roboto-m.woff2") format("woff2"), url("g/fonts/roboto/roboto-m.woff") format("woff");}
-@font-face { font-family: "Roboto"; font-weight: 500; font-style: italic; font-display: swap; src: url("g/fonts/roboto/roboto-m-i.woff2") format("woff2"), url("g/fonts/roboto/roboto-m-i.woff") format("woff");}
-@font-face { font-family: "Roboto"; font-weight: 700; font-style: normal; font-display: swap; src: url("g/fonts/roboto/roboto-b.woff2") format("woff2"), url("g/fonts/roboto/roboto-b.woff") format("woff");}
-@font-face { font-family: "Roboto"; font-weight: 700; font-style: italic; font-display: swap; src: url("g/fonts/roboto/roboto-b-i.woff2") format("woff2"), url("g/fonts/roboto/roboto-b-i.woff") format("woff");}
-@font-face { font-family: "Roboto"; font-weight: 900; font-style: normal; font-display: swap; src: url("g/fonts/roboto/roboto-bl.woff2") format("woff2"), url("g/fonts/roboto/roboto-bl.woff") format("woff");}
-@font-face { font-family: "Roboto"; font-weight: 900; font-style: italic; font-display: swap; src: url("g/fonts/roboto/roboto-bl-i.woff2") format("woff2"), url("g/fonts/roboto/roboto-bl-i.woff") format("woff");}
-@font-face { font-family: "Roboto Condensed"; font-weight: 300; font-style: normal; font-display: swap; src: url("g/fonts/roboto_condensed/roboto_condensed-l.woff2") format("woff2"), url("g/fonts/roboto_condensed/roboto_condensed-l.woff") format("woff");}
-@font-face { font-family: "Roboto Condensed"; font-weight: 300; font-style: italic; font-display: swap; src: url("g/fonts/roboto_condensed/roboto_condensed-l-i.woff2") format("woff2"), url("g/fonts/roboto_condensed/roboto_condensed-l-i.woff") format("woff");}
-@font-face { font-family: "Roboto Condensed"; font-weight: 400; font-style: normal; font-display: swap; src: url("g/fonts/roboto_condensed/roboto_condensed-r.woff2") format("woff2"), url("g/fonts/roboto_condensed/roboto_condensed-r.woff") format("woff");}
-@font-face { font-family: "Roboto Condensed"; font-weight: 400; font-style: italic; font-display: swap; src: url("g/fonts/roboto_condensed/roboto_condensed-r-i.woff2") format("woff2"), url("g/fonts/roboto_condensed/roboto_condensed-r-i.woff") format("woff");}
-@font-face { font-family: "Roboto Condensed"; font-weight: 700; font-style: normal; font-display: swap; src: url("g/fonts/roboto_condensed/roboto_condensed-b.woff2") format("woff2"), url("g/fonts/roboto_condensed/roboto_condensed-b.woff") format("woff");}
-@font-face { font-family: "Roboto Condensed"; font-weight: 700; font-style: italic; font-display: swap; src: url("g/fonts/roboto_condensed/roboto_condensed-b-i.woff2") format("woff2"), url("g/fonts/roboto_condensed/roboto_condensed-b-i.woff") format("woff");}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
 	--color-iczlkb69a: 255, 255, 255;
 	--color-ira4v6d9q: 0, 0, 0;
